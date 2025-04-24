@@ -7,6 +7,7 @@ import LatestOffers from './LatestOffers/LatestOffers';
 import FeaturedOffers from './FeaturedOffers/FeaturedOffers';
 import Products from './Products/Products';
 import Ad from './Ad/Ad';  // <-- Add this line!
+import NearbyStores from './NearbyStores/NearbyStores';
 
 const Home = () => (
   <div style={{ maxWidth: '100%', overflowX: 'hidden' }}>
@@ -16,6 +17,7 @@ const Home = () => (
     <CarouselDefault />
     <LatestOffers />
     <FeaturedOffers />
+    <NearbyStores/>
     <Ad />
     <Products />
     <Ad/>
