@@ -16,7 +16,8 @@ const Home = () => (
     <Category />
     <CarouselDefault />
     <LatestOffers />
-    <FeaturedOffers />
+  
+   
     <NearbyStores/>
     <Ad />
     <Products />
