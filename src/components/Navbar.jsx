@@ -33,13 +33,13 @@ const Navbar = () => {
                 }`}
               >
                 <BadgePercent className="w-5 h-5" />
-                Offers
+                Hourly Offers
               </span>
             )}
           </NavLink>
         </li>
         <li className="flex-1 text-center">
-          <NavLink to="/hourly-offers" className="flex flex-col items-center text-[10px]">
+          <NavLink to="/Offers" className="flex flex-col items-center text-[10px]">
             {({ isActive }) => (
               <span
                 className={`flex flex-col items-center gap-0.5 ${
@@ -52,7 +52,7 @@ const Navbar = () => {
                     className="w-2.5 h-2.5 text-black absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
                   />
                 </div>
-                Hourly
+               Offers
               </span>
             )}
           </NavLink>
