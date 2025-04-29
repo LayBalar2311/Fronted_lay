@@ -1,5 +1,6 @@
 import React from "react";
 import { Heart, ChevronsUp, ChevronsDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const OfferCard = ({ imageSrc, storeName, distance, discount, category, validUntil }) => {
   return (
@@ -30,9 +31,11 @@ const OfferCard = ({ imageSrc, storeName, distance, discount, category, validUnt
 };
 
 const LatestOffers = () => {
+  const navigate = useNavigate();
+
   const offers = [
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80", // Clothing
+      imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
       storeName: "Clothing Store",
       distance: "2km",
       discount: "Get 20% OFF your total bill!",
@@ -40,7 +43,7 @@ const LatestOffers = () => {
       validUntil: "April 30",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585152220-904242b5855e?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80", // Grocery food
+      imageSrc: "https://images.unsplash.com/photo-1600585152220-904242b5855e?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
       storeName: "Grocery Store",
       distance: "1.5km",
       discount: "Buy 1 Get 1 Free on select items!",
@@ -48,7 +51,7 @@ const LatestOffers = () => {
       validUntil: "April 28",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585154526-990d4371d661?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80", // Shoes
+      imageSrc: "https://images.unsplash.com/photo-1600585154526-990d4371d661?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
       storeName: "Shoes Store",
       distance: "3km",
       discount: "30% OFF all footwear!",
@@ -56,7 +59,7 @@ const LatestOffers = () => {
       validUntil: "May 5",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585152280-42b61bb7bdfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80", // Garage/Car
+      imageSrc: "https://images.unsplash.com/photo-1600585152280-42b61bb7bdfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
       storeName: "Garage Service",
       distance: "2.5km",
       discount: "Free oil change with service!",
@@ -64,7 +67,7 @@ const LatestOffers = () => {
       validUntil: "April 29",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80", // Electronics
+      imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
       storeName: "Tech Shop",
       distance: "1km",
       discount: "10% OFF electronics!",
@@ -72,7 +75,7 @@ const LatestOffers = () => {
       validUntil: "May 1",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585152220-904242b5855e?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80", // Cafe food
+      imageSrc: "https://images.unsplash.com/photo-1600585152220-904242b5855e?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
       storeName: "Cafe Delight",
       distance: "2km",
       discount: "Free coffee with purchase!",
@@ -80,7 +83,7 @@ const LatestOffers = () => {
       validUntil: "April 27",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585154526-990d4371d661?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80", // Books
+      imageSrc: "https://images.unsplash.com/photo-1600585154526-990d4371d661?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
       storeName: "Book Haven",
       distance: "1.8km",
       discount: "20% OFF all books!",
@@ -89,19 +92,30 @@ const LatestOffers = () => {
     },
   ];
 
+  const handleFilterClick = () => {
+    navigate("/filters");
+  };
+
   return (
     <div className="bg-gray-50 p-3 max-w-7xl mx-auto">
       <div className="flex justify-between items-center mb-3">
         <h2 className="text-xl font-bold text-gray-900">Latest Offers Nearby</h2>
         <div className="flex space-x-2">
-          <button className="text-gray-500 hover:text-gray-700 focus:outline-none">
+          <button
+            className="text-gray-500 hover:text-gray-700 focus:outline-none"
+            onClick={handleFilterClick}
+          >
             <ChevronsUp className="w-6 h-6" />
           </button>
-          <button className="text-gray-500 hover:text-gray-700 focus:outline-none">
+          <button
+            className="text-gray-500 hover:text-gray-700 focus:outline-none"
+            onClick={handleFilterClick}
+          >
             <ChevronsDown className="w-6 h-6" />
           </button>
         </div>
       </div>
+
       {/* Grid for offers */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-5 lg:gap-5">
         {offers.map((offer, index) => (

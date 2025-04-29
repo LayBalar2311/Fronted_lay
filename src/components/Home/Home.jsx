@@ -8,6 +8,7 @@ import FeaturedOffers from './FeaturedOffers/FeaturedOffers';
 import Products from './Products/Products';
 import Ad from './Ad/Ad';  // <-- Add this line!
 import NearbyStores from './NearbyStores/NearbyStores';
+import FiltersScreen from './Filters/Filters';
 
 const Home = () => (
   <div style={{ maxWidth: '100%', overflowX: 'hidden' }}>

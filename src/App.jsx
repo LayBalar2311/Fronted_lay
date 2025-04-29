@@ -8,6 +8,7 @@ import SpecialOffers from "./components/Special Offer/SpecialOffers";
 import UserInfo from './components/Profile/MenuItems/MyAccount/UserInfo'; 
 import LikedStores from "./components/Home/LikedStores/LikedStores";
 import StorePage from "./components/Home/StorePage/StorePage";
+import FilterScreen from "./components/Home/Filters/Filters";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
   <Route path="/special-offers" element={<SpecialOffers />} />
   <Route path="/account" element={<UserInfo />} />
   <Route path="/liked-stores" element={<LikedStores />} /> {/* Add this safely */}
-<Route path="/store" element={<StorePage />} />
+  <Route path="/store" element={<StorePage />} />
+          <Route path="/filters" element={<FilterScreen />} />
+
 </Routes>
 
       </main>
