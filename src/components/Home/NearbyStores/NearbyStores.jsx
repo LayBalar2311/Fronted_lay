@@ -1,10 +1,21 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import '../../../index.css';
 
 const OfferCard = ({ imageSrc, storeName, distance, discount }) => {
+  const navigate = useNavigate(); // Initialize navigate hook
+
+  const handleCardClick = () => {
+    // Navigate to StorePage with optional state
+    navigate("/store", { state: { storeName, distance, discount, imageSrc } });
+  };
+
   return (
-    <div className="min-w-[180px] max-w-[180px] flex-shrink-0 rounded-xl overflow-hidden">
+    <div
+      className="min-w-[180px] max-w-[180px] flex-shrink-0 rounded-xl overflow-hidden cursor-pointer"
+      onClick={handleCardClick} // Add click handler
+    >
       <div className="relative">
         <img
           src={imageSrc}
@@ -42,20 +53,19 @@ const NearbyStores = () => {
       distance: "2km",
       discount: "Upto 20% OFF",
     },
-   
-     {
+    {
       imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=192&q=80",
       storeName: "Matrix Salon",
       distance: "5km",
       discount: "30% OFF on all items",
     },
-     {
+    {
       imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=192&q=80",
       storeName: "Matrix Salon",
       distance: "5km",
       discount: "30% OFF on all items",
     },
-     {
+    {
       imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=192&q=80",
       storeName: "Matrix Salon",
       distance: "5km",
@@ -72,8 +82,7 @@ const NearbyStores = () => {
         </button>
       </div>
 
-<div className="flex space-x-3 overflow-x-auto pb-2 scrollbar-hide">
-
+      <div className="flex space-x-3 overflow-x-auto pb-2 scrollbar-hide">
         {offers.map((offer, index) => (
           <OfferCard
             key={index}

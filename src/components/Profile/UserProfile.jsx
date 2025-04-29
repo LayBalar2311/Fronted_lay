@@ -22,7 +22,7 @@ const UserProfile = () => {
     <div className="flex flex-col min-h-screen bg-gray-100 w-full">
       <div className="p-4 text-2xl font-bold text-gray-800 text-left">Profile</div>
       <ProfileHeader />
-      <MyAccount onClick={() => navigate("/account")} /> {/* 👈 onClick handler passed */}
+      <MyAccount onClick={() => navigate("/account")} /> 
       <CouponHistory />
       <CreateBusinessAccount />
       <TwoFactorAuthentication />
