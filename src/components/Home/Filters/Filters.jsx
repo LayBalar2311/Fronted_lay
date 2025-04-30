@@ -14,7 +14,7 @@ export default function FiltersScreen() {
   };
 
   const handleBack = () => {
-    window.history.back(); // or you can use router logic if you have routing
+    window.history.back(); 
   };
 
   return (
