@@ -6,23 +6,25 @@ import CarouselDefault from './Slider/Slider';
 import LatestOffers from './LatestOffers/LatestOffers';
 import FeaturedOffers from './FeaturedOffers/FeaturedOffers';
 import Products from './Products/Products';
-import Ad from './Ad/Ad';  // <-- Add this line!
+import Ad from './Ad/Ad';
 import NearbyStores from './NearbyStores/NearbyStores';
 import FiltersScreen from './Filters/Filters';
 
 const Home = () => (
-  <div style={{ maxWidth: '100%', overflowX: 'hidden' }}>
-    <Header />
-    <SearchBar />
-    <Category />
+  <div className="bg-white min-h-screen pb-20">
+    <div className="bg-gradient-to-b from-blue-400 via-blue-100 to-white pb-2">
+      <Header />
+      <div className="bg-gradient-to-b from-transparent to-white">
+        <SearchBar />
+        <Category />
+      </div>
+    </div>
     <CarouselDefault />
     <LatestOffers />
-  
-   
-    <NearbyStores/>
-    <Ad />
+    <div className="border-t border-gray-100 py-3"></div>
+    <NearbyStores />
+    <div className="border-t border-gray-100 py-3"></div>
     <Products />
-    <Ad/>
   </div>
 );
 
