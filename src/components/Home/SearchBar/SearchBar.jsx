@@ -33,15 +33,17 @@ const SearchBar = () => {
         
         <div className="flex ml-3 space-x-3">
           <button 
-            className="p-2 rounded-full bg-black/90 border border-gray-700 text-white shadow-md"
+            className="p-2 rounded-full bg-blue-500 !bg-blue-500 border border-blue-600 text-white shadow-md"
             onClick={toggleNotification}
+            style={{ backgroundColor: '#3b82f6' }} /* Adding inline style for stronger override */
           >
             <Bell className="h-5 w-5" />
           </button>
           
           <button 
-            className="p-2 rounded-full bg-black/90 border border-gray-700 text-white shadow-md"
+            className="p-2 rounded-full bg-blue-500 !bg-blue-500 border border-blue-600 text-white shadow-md"
             onClick={() => navigate("/special-offers")}
+            style={{ backgroundColor: '#3b82f6' }} /* Adding inline style for stronger override */
           >
             <Gift className="h-5 w-5" />
           </button>
