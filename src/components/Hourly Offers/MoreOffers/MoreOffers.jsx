@@ -12,7 +12,7 @@ const MoreOffers = () => {
       {/* Title + Filter Icon */}
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-md font-semibold">More offers from this store</h3>
-        <Filter className="w-5 h-5 text-gray-600" />
+        <Filter className="w-5 h-5 text-blue-500" style={{ color: '#3b82f6' }} />
       </div>
 
       {/* Offer Grid */}
