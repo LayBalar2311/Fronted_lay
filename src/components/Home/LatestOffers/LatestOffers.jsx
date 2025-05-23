@@ -13,7 +13,7 @@ const OfferCard = ({ imageSrc, storeName, distance, discount, category, validUnt
           onError={(e) => (e.target.src = "https://via.placeholder.com/180x180?text=Image+Error")}
         />
         <button className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
-          <Heart className="w-5 h-5 text-gray-400" />
+          <Heart className="w-5 h-5 text-gray-400 hover:text-blue-500" />
         </button>
       </div>
       <div className="p-3">
@@ -93,8 +93,9 @@ const LatestOffers = () => {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold text-gray-900">Latest Offers Nearby</h2>
         <button
-          className="flex items-center px-3 py-1 bg-gray-900 rounded-full text-white text-sm"
+          className="flex items-center px-3 py-1 bg-blue-500 !bg-blue-500 rounded-full text-white text-sm"
           onClick={handleFilterClick}
+          style={{ backgroundColor: '#3b82f6' }} /* Adding inline style for stronger override */
         >
           <Filter className="w-4 h-4 mr-1" />
           Filters
