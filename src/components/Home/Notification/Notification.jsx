@@ -21,7 +21,7 @@ export default function Notification({ onBack }) {
       {/* Header */}
       <div className="bg-white w-full flex items-center p-4 shadow">
         <button onClick={onBack} className="mr-4">
-          <IoMdArrowBack className="text-black" />
+          <IoMdArrowBack className="text-blue-500" />
         </button>
        <div className="text-base font-semibold text-gray-800 text-left">
 Notification          </div>

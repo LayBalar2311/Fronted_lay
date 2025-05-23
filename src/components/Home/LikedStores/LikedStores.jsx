@@ -34,7 +34,7 @@ const LikedStores = () => {
   <div className="flex items-center justify-between mb-2">
     <div className="flex items-center">
       <button onClick={onBack} className="mr-4">
-        <IoMdArrowBack className="text-black text-xl" />
+        <IoMdArrowBack className="text-blue-500 text-xl" />
       </button>
       <div className="text-base font-semibold">LIKED STORES</div>
     </div>
@@ -42,11 +42,11 @@ const LikedStores = () => {
 
   {/* Second Row: Filter on left, Download on right */}
   <div className="flex items-center justify-between">
-    <button className="text-sm flex items-center">
+    <button className="text-sm flex items-center text-blue-500">
       <IoFilter className="w-5 h-5 mr-1" />
       FILTERS
     </button>
-    <button>
+    <button className="text-blue-500">
       <FiDownload className="w-6 h-6" />
     </button>
   </div>

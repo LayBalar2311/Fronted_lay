@@ -77,7 +77,7 @@ const NearbyStores = () => {
     <div className="bg-white px-4 py-4">
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-lg font-bold text-gray-900">Nearby Stores</h2>
-        <button className="flex items-center text-sm text-gray-500 hover:text-black">
+        <button className="flex items-center text-sm text-blue-500 hover:text-blue-700">
           View all <ChevronRight className="ml-1 w-4 h-4" />
         </button>
       </div>

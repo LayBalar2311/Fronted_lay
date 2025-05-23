@@ -12,7 +12,7 @@ const StoreInfo = () => {
           </div>
         </div>
       </div>
-<button className="bg-yellow-400 text-black font-semibold py-2 px-4 rounded-full">
+<button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-full">
   Get Directions
 </button>
     </div>

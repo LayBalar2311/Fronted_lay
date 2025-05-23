@@ -57,6 +57,7 @@ h1 {
   line-height: 1.1;
 }
 
+/* Base button styles - removed the default background color to allow tailwind classes */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -64,12 +65,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #000000;
+  transition: all 0.25s;
 }
 button:focus,
 button:focus-visible {
@@ -91,7 +88,5 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-  button {
-    background-color: #ffffff;
-  }
+  /* Removed button background color override */
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Search, Mic, Bell, Gift } from "lucide-react";
 import Notification from "../Notification/Notification";
 
 const SearchBar = () => {
@@ -10,27 +11,42 @@ const SearchBar = () => {
     setIsNotificationOpen(!isNotificationOpen);
   };
 
-  const toggleLikedStores = () => {
-    navigate("/liked-stores");
-  };
-
   return (
-    <>
-      <div className="flex items-center justify-between w-full px-4 py-3 gap-2 overflow-x-hidden" style={{ backgroundColor: '#ffffff' }}>
-        <div className="flex items-center space-x-2 border border-gray-300 rounded px-3 py-2 flex-grow max-w-full" style={{ backgroundColor: '#ffffff' }}>
-          <span className="text-gray-600">🔍</span>
+    <div className="px-4 pb-4">
+      <div className="relative flex items-center">
+        <div className="relative flex-grow">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Search className="h-5 w-5 text-gray-400" />
+          </div>
           <input
             type="text"
+            className="block w-full pl-10 pr-12 py-3 border border-gray-200 rounded-full bg-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 shadow-sm"
             placeholder="Search"
-            className="w-full border-none outline-none text-sm bg-transparent text-black"
           />
-          <span className="border-l border-gray-300 h-5"></span>
-          <button className="text-gray-600 focus:outline-none">🎙️</button>
+          <div className="absolute inset-y-0 right-0 flex items-center">
+            <div className="h-full w-px bg-gray-200 mr-3"></div>
+            <div className="pr-3">
+              <Mic className="h-5 w-5 text-gray-400" />
+            </div>
+          </div>
         </div>
-
-        <div className="flex items-center gap-4 shrink-0">
-          <button className="text-gray-600 focus:outline-none" onClick={toggleNotification}>🔔</button>
-          <button className="text-gray-600 focus:outline-none" onClick={toggleLikedStores}>❤️</button>
+        
+        <div className="flex ml-3 space-x-3">
+          <button 
+            className="p-2 rounded-full bg-blue-500 !bg-blue-500 border border-blue-600 text-white shadow-md"
+            onClick={toggleNotification}
+            style={{ backgroundColor: '#3b82f6' }} /* Adding inline style for stronger override */
+          >
+            <Bell className="h-5 w-5" />
+          </button>
+          
+          <button 
+            className="p-2 rounded-full bg-blue-500 !bg-blue-500 border border-blue-600 text-white shadow-md"
+            onClick={() => navigate("/special-offers")}
+            style={{ backgroundColor: '#3b82f6' }} /* Adding inline style for stronger override */
+          >
+            <Gift className="h-5 w-5" />
+          </button>
         </div>
       </div>
 
@@ -39,7 +55,7 @@ const SearchBar = () => {
           <Notification onBack={toggleNotification} />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -6,41 +6,64 @@ import "slick-carousel/slick/slick-theme.css";
 const CarouselDefault = () => {
   const settings = {
     dots: true,
+    dotsClass: "slick-dots custom-dots",
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
+    arrows: false,
+    pauseOnHover: true,
+    customPaging: () => (
+      <div className="w-2 h-2 bg-gray-300 rounded-full mx-1"></div>
+    ),
   };
 
   return (
-    <div className="relative py-6">
-      <div className="relative max-w-3xl w-full mx-auto mt-6 mb-2 aspect-[16/9] rounded-lg overflow-hidden z-10">
+    <div className="px-4 mb-6">
+      <div className="w-full aspect-[2/1] rounded-lg overflow-hidden shadow-md">
         <Slider {...settings}>
           <div>
-            <img
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-              alt="Image 1"
-              className="w-full h-full object-cover"
-            />
+            <div className="relative h-full bg-black">
+              <img
+                src="https://www.tatazudio.com/sites/default/files/styles/hro_scp_dfp/public/2023-01/hro-mainbanner-hp1-m-en.jpg?itok=Q8jgkR91"
+                alt="TATA Zudio"
+                className="w-full h-full object-cover opacity-100"
+              />
+            </div>
           </div>
           <div>
-            <img
-              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-              alt="Image 2"
-              className="w-full h-full object-cover"
-            />
+            <div className="relative h-full">
+              <img
+                src="https://images.unsplash.com/photo-1581318694548-0fb6e47fe59b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+                alt="Electronics Sale"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           <div>
-            <img
-              src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-              alt="Image 3"
-              className="w-full h-full object-cover"
-            />
+            <div className="relative h-full">
+              <img
+                src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+                alt="Grocery Sale"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </Slider>
       </div>
+      <style jsx>{`
+        .custom-dots {
+          bottom: -15px;
+        }
+        .custom-dots li.slick-active div {
+          background-color: #3b82f6;
+          width: 6px;
+          height: 6px;
+          margin-top: -2px;
+        }
+      `}</style>
     </div>
   );
 };

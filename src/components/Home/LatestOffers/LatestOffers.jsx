@@ -1,30 +1,44 @@
 import React from "react";
-import { Heart, ChevronsUp, ChevronsDown } from "lucide-react";
+import { Heart, Filter } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const OfferCard = ({ imageSrc, storeName, distance, discount, category, validUntil }) => {
+const OfferCard = ({ imageSrc, storeName, distance, discount, category, validUntil, happyHours }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-[180px] mx-auto">
-      <img
-        src={imageSrc}
-        alt={storeName}
-        className="w-full h-36 object-cover"
-        onError={(e) => (e.target.src = "https://via.placeholder.com/180x144?text=Image+Error")}
-      />
+    <div className="bg-white rounded-lg shadow-sm overflow-hidden w-full">
+      <div className="relative">
+        <img
+          src={imageSrc}
+          alt={storeName}
+          className="w-full aspect-square object-cover"
+          onError={(e) => (e.target.src = "https://via.placeholder.com/180x180?text=Image+Error")}
+        />
+        <button className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
+          <Heart className="w-5 h-5 text-gray-400 hover:text-blue-500" />
+        </button>
+      </div>
       <div className="p-3">
         <div className="flex items-center justify-between">
-          <p className="text-gray-600 text-xs">
-            {storeName} ({distance})
+          <p className="text-gray-700 text-sm font-medium">
+            {storeName} <span className="text-gray-500">({distance})</span>
           </p>
-          <Heart className="w-4 h-4 text-gray-400 cursor-pointer hover:text-red-500" />
         </div>
-        <h3 className="text-lg font-bold text-blue-900 mt-1">{discount}</h3>
-        <div className="flex items-center mt-1">
-          <span className="inline-flex items-center px-1.5 py-0.5 bg-gray-200 text-gray-700 text-xs font-medium rounded-full">
-            {category}
-          </span>
+        <h3 className="text-lg font-bold text-gray-800 mt-1">{discount}</h3>
+        <p className="text-gray-500 text-xs">your total bill on your next visit!</p>
+        
+        <div className="flex items-center mt-3 space-x-2">
+          <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center">
+            <span className="text-xs">😀</span>
+          </div>
+          <span className="text-sm text-gray-600">{category}</span>
         </div>
-        <p className="text-gray-500 text-xs mt-1">Valid till {validUntil}</p>
+        
+        {happyHours && (
+          <p className="text-gray-700 text-sm mt-2">Happy Hours {happyHours}</p>
+        )}
+        
+        {validUntil && (
+          <p className="text-gray-600 text-sm mt-2">Valid till <span className="font-medium">{validUntil}</span></p>
+        )}
       </div>
     </div>
   );
@@ -35,60 +49,38 @@ const LatestOffers = () => {
 
   const offers = [
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
-      storeName: "Clothing Store",
+      imageSrc: "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=180&q=80",
+      storeName: "Name of store",
       distance: "2km",
-      discount: "Get 20% OFF your total bill!",
-      category: "Fashion",
+      discount: "Get 20% OFF",
+      category: "Category",
       validUntil: "April 30",
+      happyHours: "2 - 4 pm"
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585152220-904242b5855e?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
-      storeName: "Grocery Store",
-      distance: "1.5km",
-      discount: "Buy 1 Get 1 Free on select items!",
-      category: "Food",
-      validUntil: "April 28",
+      imageSrc: "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=180&q=80",
+      storeName: "Name of store",
+      distance: "2km",
+      discount: "Spin to Win",
+      category: "Category",
+      validUntil: "April 30",
+      description: "Win exciting offers!"
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585154526-990d4371d661?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
+      imageSrc: "https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=180&q=80",
       storeName: "Shoes Store",
       distance: "3km",
-      discount: "30% OFF all footwear!",
+      discount: "30% OFF",
       category: "Fashion",
       validUntil: "May 5",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1600585152280-42b61bb7bdfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
+      imageSrc: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=180&q=80",
       storeName: "Garage Service",
       distance: "2.5km",
-      discount: "Free oil change with service!",
+      discount: "Free oil change",
       category: "Automotive",
       validUntil: "April 29",
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
-      storeName: "Tech Shop",
-      distance: "1km",
-      discount: "10% OFF electronics!",
-      category: "Tech",
-      validUntil: "May 1",
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1600585152220-904242b5855e?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
-      storeName: "Cafe Delight",
-      distance: "2km",
-      discount: "Free coffee with purchase!",
-      category: "Food",
-      validUntil: "April 27",
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1600585154526-990d4371d661?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&h=144&q=80",
-      storeName: "Book Haven",
-      distance: "1.8km",
-      discount: "20% OFF all books!",
-      category: "Books",
-      validUntil: "May 3",
     },
   ];
 
@@ -97,27 +89,21 @@ const LatestOffers = () => {
   };
 
   return (
-    <div className="bg-gray-50 p-3 max-w-7xl mx-auto">
-      <div className="flex justify-between items-center mb-3">
-        <h2 className="text-xl font-bold text-gray-900">Latest Offers Nearby</h2>
-        <div className="flex space-x-2">
-          <button
-            className="text-gray-500 hover:text-gray-700 focus:outline-none"
-            onClick={handleFilterClick}
-          >
-            <ChevronsUp className="w-6 h-6" />
-          </button>
-          <button
-            className="text-gray-500 hover:text-gray-700 focus:outline-none"
-            onClick={handleFilterClick}
-          >
-            <ChevronsDown className="w-6 h-6" />
-          </button>
-        </div>
+    <div className="px-4 py-6">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-semibold text-gray-900">Latest Offers Nearby</h2>
+        <button
+          className="flex items-center px-3 py-1 bg-blue-500 !bg-blue-500 rounded-full text-white text-sm"
+          onClick={handleFilterClick}
+          style={{ backgroundColor: '#3b82f6' }} /* Adding inline style for stronger override */
+        >
+          <Filter className="w-4 h-4 mr-1" />
+          Filters
+        </button>
       </div>
 
       {/* Grid for offers */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-5 lg:gap-5">
+      <div className="grid grid-cols-2 gap-4">
         {offers.map((offer, index) => (
           <OfferCard
             key={index}
@@ -127,6 +113,8 @@ const LatestOffers = () => {
             discount={offer.discount}
             category={offer.category}
             validUntil={offer.validUntil}
+            happyHours={offer.happyHours}
+            description={offer.description}
           />
         ))}
       </div>
