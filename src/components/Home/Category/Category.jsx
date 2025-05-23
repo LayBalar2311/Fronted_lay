@@ -49,7 +49,7 @@ const Category = () => {
             </div>
           </div>
         </div>
-        <p className="text-xs font-medium">View All</p>
+        <p className="text-xs font-medium text-blue-500">View All</p>
       </div>
     </div>
   );
