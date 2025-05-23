@@ -21,7 +21,7 @@ export default function FiltersScreen() {
     <div className="flex flex-col h-screen bg-gray-100">
       {/* Header */}
       <div className="flex items-center p-4 text-lg font-semibold bg-white border-b">
-        <button onClick={handleBack} className="mr-3 text-gray-600 hover:text-black">
+        <button onClick={handleBack} className="mr-3 text-blue-500 hover:text-blue-700">
           <ArrowLeft className="w-6 h-6" />
         </button>
         <span>Filters</span>
